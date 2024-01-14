@@ -1,0 +1,6 @@
+![Screenshot 2024-01-14 133231](https://github.com/Prisara1612/Student-Management-Sysytem/assets/145146039/a7dcf323-6936-4b0e-b7af-efc3d7d88c32)
+![Screenshot 2024-01-14 133352](https://github.com/Prisara1612/Student-Management-Sysytem/assets/145146039/80aed707-1b2b-4200-b813-e90137614e2a)
+![Screenshot 2024-01-14 133407](https://github.com/Prisara1612/Student-Management-Sysytem/assets/145146039/79ab9750-0944-48ef-b6a1-b2b5228ee75f)
+![Screenshot 2024-01-14 133425](https://github.com/Prisara1612/Student-Management-Sysytem/assets/145146039/e3059635-d939-48ec-b0d0-bf1fd91da94e)
+![Screenshot 2024-01-14 133435](https://github.com/Prisara1612/Student-Management-Sysytem/assets/145146039/4b4c4b99-3785-439e-a975-195351ae5dae)
+![Screenshot 2024-01-14 133443](https://github.com/Prisara1612/Student-Management-Sysytem/assets/145146039/ed8bda86-b1fa-4a4a-a86a-1835446309fa)
