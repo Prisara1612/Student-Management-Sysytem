@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import DatePicker from 'react-datepicker';
 import Select from 'react-select';
 import 'react-datepicker/dist/react-datepicker.css';
+import axios from 'axios';
 
 
 const StudentList = styled.ul`
@@ -60,9 +61,10 @@ const DeleteButton = styled.button`
 const Container = styled.div`
   width: 100%;
   padding: 8px;
-  background-color: white;
+  margin-top:4rem;
+  background: linear-gradient(90deg, rgba(121, 121, 116, 1) 0%, rgba(207, 216, 218, 1) 50%, rgba(222, 218, 222, 1) 100%);
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0.2,2, 0.5);
 
   ul {
     list-style: none;
@@ -102,7 +104,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 8px;
@@ -257,6 +259,14 @@ const ProfilePage = () => {
     if (Object.values(studentInfo).every((value) => value !== '' && value !== null)) {
       setStudentInfoList([...studentInfoList, { ...studentInfo }]);
       setStudentInfo(initialState);
+      // console.log(studentInfo);
+
+        axios.post('http://localhost:3000/auth/add_student',  studentInfo )
+            .then(result => {
+                // result.data.Status ? navigate('/dashboard') : alert(result.data.Error);
+
+            })
+            .catch(err => console.log(err));
     } else {
       alert('Please fill in all required fields.');
     }
@@ -274,7 +284,7 @@ const ProfilePage = () => {
 
   return (
     <Container >
-      <Title>Add Student Details</Title>
+      <Title>Add Student Details</Title> 
       <FormContainer>
         <FormGroup>
           <Label htmlFor="fileInput">Upload Photo:</Label>

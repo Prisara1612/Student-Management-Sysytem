@@ -10,34 +10,35 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-heading {
+    background: radial-gradient(ellipse at 49% 0%, rgba(193, 193, 185, 1) 0%, rgba(201, 213, 216, 1) 52%, rgba(255, 237, 255, 1) 100%);
+}
+
+.form-heading {
     text-align: center;
-  }
-  
-  .student-form {
+}
+
+.student-form {
     width: 100%;
-  }
-  
-  .form-subheading {
+}
+
+.form-subheading {
     margin-top: 10px;
-  }
-  
-  .input-field {
+}
+
+.input-field {
     width: calc(100% - 20px);
     padding: 8px;
     margin-top: 5px;
     margin-bottom: 10px;
     box-sizing: border-box;
-  }
-  
-  .subject-mark-input {
+}
+
+.subject-mark-input {
     display: flex;
     flex-direction: column;
-  }
-  
-  .submit-button {
+}
+
+.submit-button {
     background-color: #4caf50;
     color: white;
     padding: 10px;
@@ -45,21 +46,21 @@
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-  }
-  
-  .submit-button:hover {
+}
+
+.submit-button:hover {
     background-color: #45a049;
-  }
-  
-  .success-message {
+}
+
+.success-message {
     background-color: #4caf50;
     color: white;
     text-align: center;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 4px;
-  }
-  .header{
+    border-radius: 4px;
+}
+
+.header {
     display: flex;
-  }
-  
+}

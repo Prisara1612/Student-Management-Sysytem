@@ -69,6 +69,54 @@ router.get('/results', (req, res) => {
     });
 });
 
+router.post('/add_student', (req, res) => {
+    const { rollNo, dob, name, contactNo, email, course, gender, admissionDate, address} = req.body;
+    console.log(req.body);
+    const sql = "INSERT INTO students (`rollNo`, `dob`, `name`, `contactNo`, `email`, `course`, `gender`, `admissionDate`, `address`) VALUES (?, ?, ?, ?,?,?,?,?, ?)";
+    con.query(sql, [ rollNo, dob, name, contactNo, email, course.label, gender.label, admissionDate, address], (err, result) => {
+        if (err) {
+            console.log(err);
+            return res.json({ Status: false, Error: "Query Error" });
+        }
+        return res.json({ Status: true });
+    });
+});
+
+router.get('/students', (req, res) => {
+    const sql = "SELECT students.*, results.* FROM students LEFT JOIN results ON students.rollNo = results.rollNumber";
+    con.query(sql, (err, result) => {
+        if (err) return res.json({ Status: false, Error: "Query Error" });
+        return res.json({ Status: true, Result: result });
+    });
+});
+
+
+
+router.delete('/students/:rollNumber', (req, res) => {
+    const rollNumber = req.params.rollNumber;
+
+    // Delete from 'students' table
+    const deleteStudentSQL = "DELETE FROM students WHERE rollNo = ?";
+    con.query(deleteStudentSQL, [rollNumber], (errStudent, resultStudent) => {
+        if (errStudent) {
+            console.log(errStudent);
+            return res.json({ Status: false, Error: "Query Error (Deleting student)" });
+        }
+
+        // Delete from 'results' table
+        const deleteResultSQL = "DELETE FROM results WHERE rollNumber = ?";
+        con.query(deleteResultSQL, [rollNumber], (errResult, resultResult) => {
+            if (errResult) {
+                console.log(errResult);
+                return res.json({ Status: false, Error: "Query Error (Deleting result)" });
+            }
+
+            return res.json({ Status: true, Result: "Student and result deleted successfully" });
+        });
+    });
+});
+
+
 
 router.get('/logout', (req, res) => {
     res.clearCookie('token')
