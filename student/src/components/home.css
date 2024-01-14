@@ -1,0 +1,54 @@
+
+.container{
+    display:flex;
+    /* padding: 0.2rem; */
+    margin:2rem 1rem;
+}
+
+.box{
+    border:none solid black;
+    display:flex;
+    height: 20vh;
+    width:40vw;
+    padding: 0.2rem;
+    margin:2rem 1rem;
+    box-shadow: 0 0.2rem ;
+    box-shadow: 0 0.1rem 3rem rgb(1, 0, 3);
+    border-radius: 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+#b1{
+    background-color: rgb(4, 4, 170);
+    
+}
+.inside_box{
+    display: flex;
+    justify-content: center;
+    margin:2rem 3rem;
+    /* padding:0.2rem; */
+
+}
+.inside_box h2{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+#b1 i{
+    font-size: 4rem;
+    margin-right: 1rem;
+}
+#b2 i{
+    font-size: 4rem;
+    margin-right: 1rem;
+}
+#b3 i{
+    font-size: 4rem;
+    margin-right: 1rem;
+}
+#b2{
+    background-color: rgb(234, 54, 13);
+}
+#b3{
+    background-color:  rgb(2, 77, 2)
+}
