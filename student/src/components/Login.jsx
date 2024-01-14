@@ -46,7 +46,7 @@ const Login = () => {
     <label htmlFor='password'><strong>Password:</strong></label>
     <input onChange={(e)=>setValues({...values,password:e.target.value})} type='password' placeholder='Enter Password'autoComplete="off"/>
 </div>
-<button className='btn'>Submit</button>
+<button className='btn' id='btn_1'>Submit</button>
         </form>
      <div className='foot'>
         <input type='checkbox' id='tick'/>

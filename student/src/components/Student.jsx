@@ -16,9 +16,9 @@ const StudentItem = styled.li`
   align-items: center;
   justify-content: space-between;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 8px;
   transition: background-color 0.3s;
 
   &:hover {
@@ -26,29 +26,29 @@ const StudentItem = styled.li`
   }
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     object-fit: cover;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 5px;
   }
 
   strong {
-    margin-right: 10px;
+    margin-right: 3px;
   }
 `;
 
 const SerialNumber = styled.span`
   font-weight: bold;
-  margin-right: 10px;
+  margin-right: 3px;
 `;
 
 const DeleteButton = styled.button`
   background-color: #d9534f;
   color: #fff;
   border: none;
-  padding: 8px 15px;
-  border-radius: 4px;
+  padding: 4px 8px;
+  border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s;
 
@@ -56,9 +56,10 @@ const DeleteButton = styled.button`
     background-color: #c9302c;
   }
 `;
+
 const Container = styled.div`
   width: 100%;
-  padding: 20px;
+  padding: 8px;
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -71,27 +72,27 @@ const Container = styled.div`
   li {
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 6px;
+    margin-bottom: 6px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
   }
 
   li strong {
-    margin-right: 10px;
+    margin-right: 3px;
   }
 
   img {
-    margin-right: 10px;
+    margin-right: 3px;
   }
 
   button {
-    background-color: #ff5c35;
+    background-color: #4caf50;
     color: #fff;
     border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 4px 8px;
+    border-radius: 3px;
     cursor: pointer;
   }
 
@@ -101,17 +102,17 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 28px;
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   color: #333;
 `;
 
 const FormContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 20px;
+  grid-gap: 12px;
   align-items: start;
 
   @media (min-width: 768px) {
@@ -120,82 +121,82 @@ const FormContainer = styled.div`
 `;
 
 const FormGroup = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 
   &:nth-child(2) {
-    margin-top: 34px;
+    margin-top: 12px;
 
     @media (max-width: 767px) {
-      margin-top: 20px;
+      margin-top: 8px;
     }
   }
 `;
 
 const Label = styled.label`
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   font-weight: bold;
   color: #333;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 4px;
+  border-radius: 3px;
   border: 1px solid #ccc;
 `;
 
 const PreviewContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 8px;
   position: relative;
 `;
 
 const PreviewImage = styled(motion.img)`
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 3px;
 `;
 
 const DemoImage = styled.div`
   position: relative;
-  width: 100px;
-  height: 100px;
-  background-image: url('https://res.cloudinary.com/demo/image/upload/ar_1.0,c_thumb,g_face,w_0.6,z_0.7/r_max/co_black,e_outline/co_grey,e_shadow,x_40,y_55/actor.png');
+  width: 60px;
+  height: 60px;
+  background-image: url('https://png2.cleanpng.com/sh/b8b03e4b88ba4b7a639da7bbb37fdffd/L0KzQYm3U8E6N51uj5H0aYP2gLBuTfNwdaF6jNd7LXnmf7B6Tfdwd5hxfZ9qY3PyhbB7TgV0baMyiOR4ZnnvdX7wgB9vbppzReJ3Zz3sc7F1k71ld6hzhNHqZD3zgrFtifxmNWZmeqI8MEHoQ4PqgskxNmI8T6k8OEC1QYa5UcQ6PmEATKQ5OEGxgLBu/kisspng-computer-icons-google-account-user-profile-iconfin-png-icons-download-profile-5ab0301e32cb90.1777380215214960942081.png');
   background-size: cover;
   background-position: center;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 3px;
   cursor: pointer;
 `;
 
 const PlusSign = styled.div`
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  width: 20px;
-  height: 20px;
+  bottom: 3px;
+  right: 3px;
+  width: 10px;
+  height: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 8px;
   font-weight: bold;
   color: #fff;
-  background-color: #ff5c35;
+  background-color: #4caf50;
   border-radius: 50%;
   cursor: pointer;
 `;
 
 const UploadButton = styled(motion.label)`
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #ff5c35;
+  padding: 4px 8px;
+  background-color: #4caf50;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: pointer;
 `;
 
@@ -204,11 +205,11 @@ const FileInput = styled.input`
 `;
 
 const Button = styled(motion.button)`
-  padding: 10px 20px;
-  background-color: #ff5c35;
+  padding: 6px 12px;
+  background-color: #4caf50;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: pointer;
 `;
 
@@ -272,7 +273,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <Container>
+    <Container >
       <Title>Add Student Details</Title>
       <FormContainer>
         <FormGroup>
@@ -358,7 +359,7 @@ const ProfilePage = () => {
         <FormGroup>
           <Label>Email ID:</Label>
           <Input
-            type="text"
+            type="email"
             value={studentInfo.email}
             onChange={(e) =>
               setStudentInfo({ ...studentInfo, email: e.target.value })
@@ -421,6 +422,7 @@ const ProfilePage = () => {
         Add Student
       </Button>
       {/* Display entered student information */}
+      <div className='student_mesg'>
       {studentInfoList.length > 0 && (
         <StudentList>
           <Title>Student Information</Title>
@@ -456,7 +458,9 @@ const ProfilePage = () => {
           ))}
         </StudentList>
       )}
+      </div>
     </Container>
+    
   );
 };
 

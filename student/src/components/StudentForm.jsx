@@ -1,8 +1,11 @@
 // StudentForm.jsx
 import React, { useState } from 'react';
 import './StudentForm.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const StudentForm = () => {
+  const navigate = useNavigate();
   const [studentInfo, setStudentInfo] = useState({
     name: '',
     rollNumber: '',
@@ -37,7 +40,12 @@ const StudentForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+        axios.post('http://localhost:3000/auth/add_result', { studentInfo })
+            .then(result => {
+                result.data.Status ? navigate('/dashboard') : alert(result.data.Error);
 
+            })
+            .catch(err => console.log(err));
     // Perform any additional actions with the student information, such as saving to a database or displaying results.
     console.log('Student Info:', studentInfo);
 

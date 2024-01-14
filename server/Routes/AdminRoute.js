@@ -2,28 +2,28 @@ import express from "express";
 import con from "../utils/db.js";
 import jwt from "jsonwebtoken";
 
-const router=express.Router();
+const router = express.Router();
 
-router.post("/adminlogin",(req,res)=>{
-    const sql="SELECT * from admin where email=? and password =?";
-    con.query(sql,[req.body.email,req.body.password],(err,result)=>{
-        if(err)return res.json({loginStatus:false,Error:"querry error"});
-        if(result.length>0){
-            const email=result[0].email;
-            const token=jwt.sign(
+router.post("/adminlogin", (req, res) => {
+    const sql = "SELECT * from admin where email=? and password =?";
+    con.query(sql, [req.body.email, req.body.password], (err, result) => {
+        if (err) return res.json({ loginStatus: false, Error: "querry error" });
+        if (result.length > 0) {
+            const email = result[0].email;
+            const token = jwt.sign(
                 {
-                    role:"admin",email:email
+                    role: "admin", email: email
                 },
                 "jwt_secret_key",
                 {
-                    expiresIn:"1d"
+                    expiresIn: "1d"
                 }
             );
-            res.cookie('token',token)
-            return  res.json({loginStatus:true});
+            res.cookie('token', token)
+            return res.json({ loginStatus: true });
 
-        }else{
-            return  res.json({loginStatus:false,Error:"! Wrong Email or Password"})
+        } else {
+            return res.json({ loginStatus: false, Error: "! Wrong Email or Password" })
         }
     })
 })
@@ -49,16 +49,36 @@ router.post('/add_department', (req, res) => {
     });
 });
 
+router.post('/add_result', (req, res) => {
+    const { studentInfo} = req.body;
+    const sql = "INSERT INTO results (`department`,`name`, `rollNumber`, `Art`,`English`, `History`,`Math`, `Science`) VALUES (?, ?, ?, ?,?,?,?,?)";
+    con.query(sql, [studentInfo.department, studentInfo.name, studentInfo.rollNumber,studentInfo.subjectMarks.Art, studentInfo.subjectMarks.English, studentInfo.subjectMarks.History, studentInfo.subjectMarks.Math, studentInfo.subjectMarks.Science  ], (err, result) => {
+        if (err) {
+            console.log(err);
+            return res.json({ Status: false, Error: "Query Error" });
+        }
+        return res.json({ Status: true });
+    });
+});
+
+router.get('/results', (req, res) => {
+    const sql = "SELECT * FROM results";
+    con.query(sql, (err, result) => {
+        if (err) return res.json({ Status: false, Error: "Query Error" });
+        return res.json({ Status: true, Result: result });
+    });
+});
+
 
 router.get('/logout', (req, res) => {
     res.clearCookie('token')
-    return res.json({Status: true})
+    return res.json({ Status: true })
 })
 
 
 
 
-export {router as adminRouter};
+export { router as adminRouter };
 // import express from "express";
 // import con from "../utils/db.js";
 // import jwt from "jsonwebtoken";
@@ -103,7 +123,7 @@ export {router as adminRouter};
 //     })
 // })
 
-// // image upload 
+// // image upload
 // const storage = multer.diskStorage({
 //     destination: (req, file, cb) => {
 //         cb(null, 'Public/Images')
@@ -115,11 +135,11 @@ export {router as adminRouter};
 // const upload = multer({
 //     storage: storage
 // })
-// // end imag eupload 
+// // end imag eupload
 
 // router.post('/add_employee',upload.single('image'), (req, res) => {
-//     const sql = `INSERT INTO employee 
-//     (name,email,password, address, salary,image, category_id) 
+//     const sql = `INSERT INTO employee
+//     (name,email,password, address, salary,image, category_id)
 //     VALUES (?)`;
 //     bcrypt.hash(req.body.password, 10, (err, hash) => {
 //         if(err) return res.json({Status: false, Error: "Query Error"})
@@ -128,7 +148,7 @@ export {router as adminRouter};
 //             req.body.email,
 //             hash,
 //             req.body.address,
-//             req.body.salary, 
+//             req.body.salary,
 //             req.file.filename,
 //             req.body.category_id
 //         ]
@@ -158,8 +178,8 @@ export {router as adminRouter};
 
 // router.put('/edit_employee/:id', (req, res) => {
 //     const id = req.params.id;
-//     const sql = `UPDATE employee 
-//         set name = ?, email = ?, salary = ?, address = ?, category_id = ? 
+//     const sql = `UPDATE employee
+//         set name = ?, email = ?, salary = ?, address = ?, category_id = ?
 //         Where id = ?`
 //     const values = [
 //         req.body.name,
